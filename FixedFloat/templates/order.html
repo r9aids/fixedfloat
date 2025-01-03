@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Order {{orderStr}} FixedFloat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta property="og:image" content="https://ff.io/assets/images/public/ogimage.jpg">
+	<meta property="og:site_name" content="FixedFloat">
+	<meta name="title" content="Order {{orderStr}} FixedFloat">
+	<meta property="og:title" content="Order {{orderStr}} FixedFloat">
+	<meta property="og:description" content="">
+	<link rel="shortcut icon" href="/assets/images/favicon.png">
+	<link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/assets/images/icons/apple-touch-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="117x117" href="/assets/images/icons/apple-touch-icon-117x117.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-touch-icon-180x180.png">
+	<link rel="alternate" hreflang="en" href="https://ff.io/en/order/{{orderStr}}">
+	<link rel="alternate" hreflang="es" href="https://ff.io/es/order/{{orderStr}}">
+	<link rel="alternate" hreflang="de" href="https://ff.io/de/order/{{orderStr}}">
+	<link rel="alternate" hreflang="fr" href="https://ff.io/fr/order/{{orderStr}}">
+	<link rel="alternate" hreflang="pt" href="https://ff.io/pt/order/{{orderStr}}">
+	<link rel="alternate" hreflang="ru" href="https://ff.io/ru/order/{{orderStr}}">
+	<link rel="alternate" hreflang="pl" href="https://ff.io/pl/order/{{orderStr}}">
+	<link rel="alternate" hreflang="nl" href="https://ff.io/nl/order/{{orderStr}}">
+	<link rel="alternate" hreflang="ua" href="https://ff.io/ua/order/{{orderStr}}">
+	<link rel="alternate" hreflang="tr" href="https://ff.io/tr/order/{{orderStr}}">
+	<link rel="alternate" hreflang="it" href="https://ff.io/it/order/{{orderStr}}">
+	<link rel="alternate" hreflang="cn" href="https://ff.io/cn/order/{{orderStr}}">
+	<link rel="alternate" hreflang="ko" href="https://ff.io/ko/order/{{orderStr}}">
+	<link rel="alternate" hreflang="ja" href="https://ff.io/ja/order/{{orderStr}}">
+	<link rel="alternate" hreflang="x-default" href="https://ff.io/order/{{orderStr}}">
+	<link rel="preload" href="/assets/fonts/montserrat/latin/montserrat-v25-latin-300.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/montserrat/latin/montserrat-v25-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/montserrat/latin/montserrat-v25-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/montserrat/latin/montserrat-v25-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/montserrat/latin/montserrat-v25-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="/assets/fonts/fficons/fficons.woff2?172355" as="font" type="font/woff2" crossorigin>
+	<style type="text/css">
+		@font-face {
+			font-family: 'Icons';
+			font-display: block;
+			src: url("/assets/fonts/fficons/fficons.woff2?172355") format("woff2"), 
+			     url("/assets/fonts/fficons/fficons.woff?172355") format("woff"), 
+			     url("/assets/fonts/fficons/fficons.ttf?172355") format("truetype");
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="/assets/css/min.css?251739">
+    <link rel="stylesheet" type="text/css" href="/assets/css/order.min.css?191538">
+	<script type="text/javascript" src="/assets/js/min.js?192034"></script>
+    <script type="text/javascript" src="/assets/js/order.min.js?151833"></script>
+	<script type="text/javascript" src="/assets/js/libs/moment.min.js" defer></script>
+	<script type="text/javascript" src="/assets/js/libs/jsqr.js" defer></script>
+	<script type="text/javascript" src="/assets/js/libs/webln.min.js" defer></script>
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125458753-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-125458753-1');
+	</script>
+</head>
+<body class="order">
+	<script type="text/javascript">
+		let localTheme = localStorage.getItem('theme');
+		let currTheme  = localTheme ? localTheme : "dark";
+		window.themeLight = currTheme == 'light' ? true : false;
+		document.body.className += (document.body.className ? ' ' : '') + currTheme+'bg';
+	</script>
+	<script type="text/javascript">
+		function initFreshChat() {
+			let restoreId = '';
+			window.fcWidget.init({
+				token: "15d5f180-cf0e-4bcc-8165-c25e4879bab4",
+				host:  "https://wchat.freshchat.com",
+				locale: "en",
+				externalId: "client_12373907",
+				restoreId: restoreId ? restoreId : null,
+				config: {
+			    	hideFAQ: true,
+			    	agent: {
+				        hideName: true,
+				        hidePic:  true,
+				        hideBio:  false,
+			    	},
+				},
+			});
+			window.fcWidget.user.get(function(resp) {
+				window.fcWidget.user.setFirstName("Client #12373907");
+
+				let status = resp && resp.status,
+					data   = resp && resp.data;
+				if (status !== 200) {
+					window.fcWidget.on('user:created', function(resp) {
+						let status = resp && resp.status,
+							data   = resp && resp.data;
+						if (status === 200 || !restoreId) {
+							setRestoreId(data.restoreId)
+						}
+					});
+				} else if (data.restoreId && !restoreId) {
+					setRestoreId(data.restoreId)
+				}
+			});
+			function setRestoreId(restoreId) {
+				if (!restoreId) return;
+				APP.api('userSetChatRestoreId', {restoreId: restoreId})
+					.then(function(msg) {}).catch(function(msg) {})
+			}
+
+			document.dispatchEvent(new Event("freshchatStart"));
+		}
+
+		function initialize(i,t) {
+			var e;
+			i.getElementById(t) ? initFreshChat() : (
+				(e = i.createElement("script")).id = t,
+				e.async = !0,
+				e.src = "https://wchat.freshchat.com/js/widget.js",
+				e.onload = initFreshChat,
+				i.head.appendChild(e)
+			)
+		}
+		function initiateCall() {
+			initialize(document,"freshchat-js-sdk")
+		}
+		window.addEventListener ? window.addEventListener("load",initiateCall,!1) : window.attachEvent("load",initiateCall,!1);
+	</script>
+	<main>
+		<section id="index_main" class="main-section withheader">
+				<style id="highlighting_style"></style>
+	<header id="header">
+		<div class="wrapper">
+			<div class="left-menu-wrap" id="left_menu_wrap">
+				<div id="left_menu_btn">
+					<div><span></span><span></span><span></span></div>
+				</div>
+				<nav class="left-menu" id="left_menu">
+					<div class="theme-switch-wrap">
+						<label class="theme-switch">
+							<input type="checkbox" name="themelight" id="themelight_switch_mobile">
+							<span><i class="ico"></i></span>
+						</label>
+					</div>
+					<section>
+						<ul id="left_menu_content" class="menu linkhl">
+							<li class="menu-head"><span>Account</span></li>
+													<li><a href="https://ff.io/user/signin">Sign in</a></li>
+							<li><a href="https://ff.io/user/signup">Sign up</a></li>
+													<li class="menu-head"><span>FixedFloat</span></li>
+							<li><a href="https://ff.io/about">About</a></li>
+							<li><a href="https://ff.io/blog">Blog</a></li>
+							<li><a href="https://ff.io/faq">FAQ</a></li>
+							<li><a href="https://ff.io/api">API</a></li>
+							<li><a href="https://ff.io/support">Support</a></li>
+													<li><a href="https://ff.io/affiliate">Affiliate program</a></li>
+						                            <li><a href="https://ff.io/brand">Our brand</a></li>
+							<li class="menu-head"><span>Rules</span></li>
+                            <li><a href="https://ff.io/terms-of-service">Terms of Service</a></li>
+                            <li><a href="https://ff.io/privacy-policy">Privacy Policy</a></li>
+						</ul>
+					</section>
+				</nav>
+			</div>
+			<nav>
+								<a href="/" id="logo" class="logo">
+					<span class="logo-text-fixed" id="logo_text_from" data-value="{{secondCryptoShort}}TRC"></span><div class="ico"><span class="logo-arrow-from" id="logo_arrow_from" data-value="{{secondCryptoShort}}TRC"></span><span class="logo-arrow-to" id="logo_arrow_to" data-value="{{firstCryptoShort}}"></span></div><span class="logo-text-float" id="logo_text_to" data-value="{{firstCryptoShort}}"></span>
+				</a>
+				<div class="nav-right">
+					<ul class="nav menu hoverhl">
+						<li><a href="https://ff.io/about">About</a></li>
+						<li><a href="https://ff.io/blog">Blog</a></li>
+						<li><a href="https://ff.io/faq">FAQ</a></li>
+						<li><a href="https://ff.io/api">API</a></li>
+						<li><a href="https://ff.io/support">Support</a></li>
+					</ul>
+					<div class="loc hoverhl">
+						<a class="menu-focus-btn" tabindex="0"><div class="ui-select-value"><i class="loc-img loc-en"></i></div></a>
+						<div class="menu-focus-opened">
+							<ul class="hoverhl" id="loc_menu_wrap">
+																	<li><a href="/en/order/{{orderStr}}"><i class="loc-img loc-en"></i><span>English</span></a></li>
+																	<li><a href="/es/order/{{orderStr}}"><i class="loc-img loc-es"></i><span>Español</span></a></li>
+																	<li><a href="/de/order/{{orderStr}}"><i class="loc-img loc-de"></i><span>Deutsch</span></a></li>
+																	<li><a href="/fr/order/{{orderStr}}"><i class="loc-img loc-fr"></i><span>Français</span></a></li>
+																	<li><a href="/pt/order/{{orderStr}}"><i class="loc-img loc-pt"></i><span>Português</span></a></li>
+																	<li><a href="/ru/order/{{orderStr}}"><i class="loc-img loc-ru"></i><span>Русский</span></a></li>
+																	<li><a href="/pl/order/{{orderStr}}"><i class="loc-img loc-pl"></i><span>Polski</span></a></li>
+																	<li><a href="/nl/order/{{orderStr}}"><i class="loc-img loc-nl"></i><span>Nederlands</span></a></li>
+																	<li><a href="/ua/order/{{orderStr}}"><i class="loc-img loc-ua"></i><span>Украïнська</span></a></li>
+																	<li><a href="/tr/order/{{orderStr}}"><i class="loc-img loc-tr"></i><span>Türkçe</span></a></li>
+																	<li><a href="/it/order/{{orderStr}}"><i class="loc-img loc-it"></i><span>Italiano</span></a></li>
+																	<li><a href="/cn/order/{{orderStr}}"><i class="loc-img loc-cn"></i><span>中文</span></a></li>
+																	<li><a href="/ko/order/{{orderStr}}"><i class="loc-img loc-ko"></i><span>한국어</span></a></li>
+																	<li><a href="/ja/order/{{orderStr}}"><i class="loc-img loc-ja"></i><span>日本の</span></a></li>
+															</ul>
+						</div>
+						<div class="shadow-body" tabindex="0"></div>
+					</div>
+					<div class="theme-switch-wrap">
+						<label class="theme-switch">
+							<input type="checkbox" name="themelight" id="themelight_switch">
+							<span><i class="ico"></i></span>
+						</label>
+						<script type="text/javascript">
+						    if (window.themeLight) {
+						    	document.getElementById('themelight_switch').checked = true;
+						    	document.getElementById('themelight_switch_mobile').checked = true;
+						    }
+						</script>
+					</div>
+													<div class="nav userbar hoverhl">
+						<a id="header_signin" class="btn-text" href="https://ff.io/user/signin">Sign in</a>
+						<a id="header_signup" class="btn" href="https://ff.io/user/signup">Sign up</a>
+					</div>
+								</div>
+			</nav>
+			<div class="shadow-body"></div>
+		</div>
+	</header>
+	<template id="auth">
+	<div class="popup-auth">
+		<div class="auth-wrap">
+					<div class="auth-image"></div>
+					<div class="auth-content">
+				<nav class="auth-nav" id="auth_nav">
+					<button type="button" id="nav_signin" class="auth-nav-btn" data-layout="signin">Sign in</button><button type="button" id="nav_signup" class="auth-nav-btn" data-layout="signup">Sign up</button>
+				</nav>
+				<div class="auth-outer" id="auth_layouts">
+					<form class="auth-layout" id="layout_forgot">
+						<input name="email" required type="text" value="" data-label="Email" data-error-empty="This is a required field" data-error-invalid="Email entered is not a valid email">
+						<div class="auth-success" id="auth_reset_success">
+							<p>Reset request successfully sent. You will receive a confirmation e-mail if this account has been registered.</p>
+							<div class="auth-wrap-btn"><button class="btn close popup-close-btn">Close</button></div>
+						</div>
+						<div class="auth-error" id="auth_reset_captcha_error">Invalid CAPTCHA. Try again</div>
+						<div class="auth-error" id="auth_reset_error">User with this email is not registered on the site.</div>
+						<div class="auth-wrap-btn">
+							<button class="btn" id="auth_reset_btn" disabled data-captcha-loading="Loading CAPTCHA...">Reset password</button>
+						</div>
+						<div class="auth-wrap-btn">
+							<button class="btn-text auth-nav-btn" type="button" data-layout="signin">Back to Sign in</button>
+						</div>
+					</form>
+					<form class="auth-layout" id="layout_signin">
+						<input name="email" required type="text" value="" data-label="Email" data-error-empty="This is a required field" data-error-invalid="Email entered is not a valid email">
+						<input name="pswd" required type="password" value="" data-label="Password" data-error-empty="This is a required field">
+						<div class="auth-forgot-wrap">
+							<button class="btn-text hl auth-nav-btn" type="button" id="nav_forgot" data-layout="forgot">Forgot password</button>
+						</div>
+						<div class="auth-error" id="signin_captcha_error">Invalid CAPTCHA. Try again</div>
+						<div class="auth-error" id="auth_error">Invalid email or password</div>
+						<div class="auth-wrap-btn">
+							<button class="btn" id="auth_signin" disabled data-captcha-loading="Loading CAPTCHA...">Sign in</button>
+						</div>
+					</form>
+					<form class="auth-layout" id="layout_signup">
+						<input name="email" required type="text" value="" data-label="Email" data-error-empty="This is a required field" data-error-invalid="Email entered is not a valid email">
+						<input name="pswd" required type="password" value="" data-label="Password" data-error-empty="This is a required field" data-error-invalid="The password must contain at least one uppercase and one lowercase letter, one number, and contain at least 6 characters.">
+						<input name="repswd" required type="password" value="" data-label="Confirm Password" data-error-empty="This is a required field" data-error-invalid="Passwords do not match.">
+						<div class="auth-error" id="signup_captcha_error" data-loading="Invalid CAPTCHA. Try again"></div>
+						<div class="auth-error" id="auth_signup_error">An account with this email already exists. <button class="btn-text auth-nav-btn" type="button" data-layout="forgot" style="color: inherit;">Forgot password?</button></div>
+						<div class="auth-wrap-btn">
+							<button class="btn" id="auth_signup" disabled data-captcha-loading="Loading CAPTCHA...">Sign up</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+			<div class="wrapper">
+					<section class="order-outer">
+			<div class="order-body">
+				<section class="order-direction clrfix">
+					<div class="dir-from">
+						<div class="dir-cont" data-value="{{secondCryptoShort}}">
+							<div class="coin-ico svgcoin {{secondCryptoShort.lower()}}"></div>
+							<div class="coin-head">You send</div>
+							<div class="coin-value" id="order_send_value">{{secondCryptoAmount}} {{ secondCryptoShort }}</div>
+							<div class="coin-address" title="{{botAddress}}">{{botAddress}}</div>
+						</div>
+					</div>
+					<div class="dir-arrow"><div class="ico arrow"></div></div>
+					<div class="dir-to">
+						<div class="dir-cont" data-value="{{firstCryptoShort}}">
+							<div class="coin-ico svgcoin {{firstCryptoShort.lower()}}"></div>
+							<div class="coin-head">You receive</div>
+							<div class="coin-value" id="order_receive_value">{{firstCryptoAmount}} {{firstCryptoShort}}</div>
+							<div class="coin-address" title="{{userAddress}}">{{userAddress}}</div>
+						</div>
+					</div>
+				</section>
+				<div class="order-wrap-shadow">
+					<section class="order-action new" id="order_action">
+												<div class="order-action-body buttonhl">
+							<div class="order-qr-wrap" id="order_qr"><div class="order-qr">
+                                <input type="radio" id="qr_type0" name="qr_switcher" checked>
+                                <div class="order-qrcode" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANIAAADSAQMAAAAFVwwBAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAYpJREFUWIXVl9utwzAMQwVkgIzk1T2SBzCgK5LK607AGm1h6+TDVmlKifiRcSRGTfaZR876jRgILTNW3xjByT6baWnGRq5Rs0MnCS4zPVkg0RhId/gyzIQXIpYMmqitVzRxALCPXkyYUoxjPJ/P/fNgPc5aVGjWZP+3Lg92TopgUrW4YxVJptuLURDaeulARlCHoVasWLs/cJ2n9RFpxlifZj1Bw+JD97BiCzq4LEC7H6xYZiyV4pk8DLWLSPuEDQsuZFViSZ+VIxixSxDYd8oFxo7LJ5zYXUQlC33oBUbsvleVXJaBVE1NM8aUJutoS2F/y5ULu6VwdrplrP0/+DBdM7bOUDBV+24NTNjTj9JSWU0HBe3FuGO4VecaxXUel585MTZP9IJkx19DRmbF2O31mr0+G+h+JzFit0oV3XRVvaJYsecATLSa/mO93p1M2GpZhPonPnSoh/Zi493fM9Fwh7Rk0W9NefdSrqwxtQsRU9FWLJ4Wn82fLMyO6Y4h2l5LnK/7Z8F+ZPwBIthpcGOIDwQAAAAASUVORK5CYII=" alt=""></div>
+                                <input type="radio" id="qr_type1" name="qr_switcher">
+                                <div class="order-qrcode" href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOoAAADqAQMAAACWWksNAAAABlBMVEX///8AAABVwtN+AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAdRJREFUWIXVmNGNBCEMQyNRACXROiVRAFIusQO6m2vAjHZXM/PYjwjHGMyevZrn1ZbFr/W5+2w+2xr5dmnj+NpIYCOeg3mwNYxIGudDlJfYsyrHiIZqX8D5dpvtjil6B8esRGEbYsJkPIFTTNkGdZOS+mpNE1cDj8/n09+C+HhjOU6IKX//WaciTgE5TMcbi0EnYJw0ji+kn82AegZG5H/MpHGUQaNnAzcUVrVp43i+tWUDe7oP3dPkMZbYKGQaBHTDwX4Ao4w+M9nkfQaFamNhnEtUsSgsP3+aWRg3vL058vjkLK/Xxhs9jDRwI463EpMydrTrpKTaSZN3SmQxo1iaJtguMTHES2O+sl6tS/f5ZZq6GGA4JMVBlcbuOiaMsTXFsopAduZqmDiubcaEUdI6y0OP+6jiPo/XTEZ21nYWKmFseZzRGB/RzOiEJ3DNx8Y4O5vV7GFtfLOXc6eKRYuLri9pjL5NAe1zg6AAbWljZoJdO+3SU/WDSeNrjJQRPPSGeGl8D0x3ncUMbKKyN8y08bKzx6tkxs0q3EccZzFcnO7RAHPkE/hEmYmjDRh992Oa0rhmpax/XoVpY4rJ2RI8Mz332hg1mBn3e9QT47svafzs9QO2baR9TdtQBAAAAABJRU5ErkJggg==" alt=""></div>
+                                <div class="qr-switcher" data-count="2">
+                                        <label for="qr_type0"><span>Address</span></label>
+                                        <label for="qr_type1"><span>With amount</span></label>
+                                    </div>
+                            </div></div>
+							<section class="order-head-info" id="order_info">
+								<div class="order-head-info-inner" id="order_info_inner">
+									<div class="order-id-wrap">
+										<label>Order ID</label>
+										<div><span class="pseudo-hint-blue" data-copy="{{orderStr}}" data-hint="Copied"><span class="order-id hl">{{orderStr}}</span><i class="ico copy"></i></span></div>
+									</div>
+									<!-- <div class="order-time new">
+										<label data-remaining="Time remaining" data-status="Order status"></label>
+										<div><span id="order_time" class="hl" data-time="30:00" data-expired="Order expired" data-exchange="Received" data-done="Completed" data-emergency="User response" data-refund="Refunded"></span></div>
+									</div> -->
+									<div>
+										<label>Order type</label>
+										<div><span class="order-type">Float rate</span></div>
+									</div>
+									<div class="none">
+										<label>Received Time</label>
+										<div><time id="order_time_tx" timestamp=""></time></div>
+									</div>
+									<div class="none">
+										<label>Completed Time</label>
+										<div><time id="order_time_competed" timestamp=""></time></div>
+									</div>
+								</div>
+							</section>
+							<div class="order-action-details" id="order_details">
+
+															<div class="order-data-details">
+	<div class="order-p-wrap">
+		<p class="order-p-amount">Send <b class="order-amount pseudo-hint-blue" data-hint="Copied" data-copy="{{secondCryptoAmount}}" data-value="{{secondCryptoShort}}TRC">{{secondCryptoAmount}} {{secondCryptoShort}}<sup>{{ secondCryptoShort }}</sup></b> to the address:</p>
+		<p class="order-p-address"><span class="order-address-wrap"><b class="order-address order-address-from pseudo-hint-blue" data-copy="{{botAddress}}" data-hint="Copied" title="{{botAddress}}"><i>{{botAddress}}</i><i class="ico copy"></i></b></span></p>
+	</div>
+	<p class="order-attention">The exchange rate will be fixed after receiving <b>1</b> network confirmations.</p>
+</div>
+<div class="order-data-destination">
+	<p><label>Receiving address {{firstCryptoShort}}</label><br><span class="order-address-destination">{{userAddress}}</span></p>
+</div>														</div>
+						</div>
+						<div class="order-extra-details more none" id="order_details_more">
+							</div>
+					</section>
+									<section class="order-emergency clrfix" id="section_emergency"></section>
+									<section class="order-timeline clrfix" id="section_timeline">
+						<div class="timeline-container">
+							<ol id="timeline_steps" class="clrfix" data-value="{{firstCryptoShort}}">
+								<li id="timeline_new" class="active"><div><span class="ico deposit"></span><label>Awaiting deposit</label></div></li>
+								<li id="timeline_pending" class=""><div><span class="ico pending"></span><label class="foremergency">Waiting&#8239;&#8239;for&#8239;&#8239;user response</label><label>Awaiting confirmations</label></div></li>
+								<li id="timeline_exchange"><div><span class="ico exchange"></span><label>Perform exchange</label></div></li>
+																<li id="timeline_done" class=""><div><span class="ico complete"></span><label class="forrefund">Refunded</label><label>Done</label></div></li>
+							</ol>
+						</div>
+					</section>
+					<section class="order-info">
+						<section class="order-info-known">
+							<h3>What do you need to know?</h3>
+							<div class="order-note"><em class="ico speed">­</em><span>Only <strong>1</strong> {{ secondCryptoShort }} blockchain confirmation is needed to complete the exchange</span></div>							<div class="order-note"><em class="ico coin {{firstCryptoShort}}">­</em><span>The speed of confirmation of a Bitcoin transaction depends on the level of congestion of the Bitcoin blockchain network, read more in our <a href="/blog/guides/why-bitcoin-is-not-confirmed">article</a></span></div>							<div class="order-note"><em class="ico recalc">­</em><span>If the amount of the transaction you sent differs from the initial amount specified in the order with a float rate, the order will be automatically recalculated.</span></div>
+<div class="order-note"><em class="ico hours24">­</em><span>If your transaction is received after the expiration of the order, but within 24 hours, then this transaction will be automatically displayed in the order. You will be able to continue the order yourself or make a refund.</span></div>						</section>
+						<section class="order-notice clrfix buttonhl">
+							<div class="active">
+								<h3>Order status notifications</h3>
+								<div class="order-notice-changeblock none" id="notice_tosubscribe">
+									<p>Enter your email if you want to receive notifications about changes in the status of this order</p>
+									<input id="notice_email_input" required type="text" value="" data-label="Email" data-error-empty="This is a required field" data-error-invalid="Email entered is not a valid email">
+									<button id="notice_submit" class="btn">Confirm</button>
+								</div>
+								<div class="order-notice-changeblock" id="notice_subscribed">
+									<p>You have subscribed to notifications of changes to this order; a notification has been sent to your email <b id="notice_email"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e294838e978791d2d2d2d3a2858f838b8ecc818d8f">[email&#160;protected]</a></b></p>
+									<a href="#" class="order-notice-wrong hoverhl" id="notice_wrong">I want to change my email for receiving notifications</a>
+								</div>
+								<span class="order-notice-image"></span>
+							</div>
+						</section>
+					</section>
+				</div>
+			</div>
+		</section>
+		<template id="popup_email_notification">
+			<div class="popup-content popup-order-email">
+				<form id="popup_email_notification_form"> 
+					<h3>Email notifications about order status</h3>
+					<p>Enter your valid email to receive notification of changes in the status of this order. <b>Any changes</b> to order data are possible only through <b>confirmation from the email</b> specified in the order.</p>
+					<div class="popup-order-email-wrap">
+						<div class="popup-order-email-control">
+							<input name="email" required data-label="Email" data-error-empty="This is a required field" data-error-invalid="Email entered is not a valid email">
+							<label class="checkbox-tick"><input type="checkbox" name="nomore"> <span>I don't want to see this notification anymore</span></label>
+							<div class="popup-api-gen-btn">
+								<button type="button" id="popup_email_notification_submit" class="btn">Confirm</button>
+								<button type="button" id="popup_email_notification_close" class="btn border cancel">Refuse</button>
+							</div>
+						</div>
+						<div class="order-notice-image"></div>
+					</div>
+				</form>
+			</div>
+		</template>
+			<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+			document.addEventListener("DOMContentLoaded", function() {
+				moment.locale('en');
+				APP.highlightingColor('{{secondCryptoShort}}TRC', '{{firstCryptoShort}}');
+
+				let F = UI.func;
+				let orderData = {
+					id: '{{orderStr}}',
+					token: 'oHB9DVwwR7qXGooQlUggpBaHRrX0ZZYAYItjBLZU',
+					email: 'something@gmail.com',
+					isAuth: false,
+					timeStart: 74,
+					timeLeft: 1726,
+					from: {
+						amount:  '{{secondCryptoAmount}}',
+						address: '{{botAddress}}',
+						confirm: null,
+						tx:      null,
+						timeBlock: null 
+					},
+					to: {
+						amount:  '{{firstCryptoAmount}}',
+						address: '{{userAddress}}',
+						confirm: null,
+						tx:      null,
+						timeBlock: null 
+					},
+					back: {
+						address: '',
+						confirm: null,
+						tx:      null,
+						timeBlock: null 
+					},
+					status: 'NEW',
+					refundonly: false,
+					emergency: {
+						status: [],
+						choice: 'NONE',
+						repeat: '0',
+						tmpl: F.id('section_emergency').innerHTML
+					},
+				};
+				let isWidget = false;
+
+				let Notice = {
+					input:    F.id('notice_email_input'),
+					btnwrong: F.id('notice_wrong'),
+					switchLayout: function(subscribed) {
+						F.togClass('notice_subscribed',  'none', !subscribed);
+						F.togClass('notice_tosubscribe', 'none', subscribed);
+					},
+					subscribe: function(email) {
+						let self = this;
+						return APP.api('orderSetEmail', {id: orderData.id, email: email}).then(function() {
+							F.id('notice_email').innerHTML = email;
+							self.switchLayout(true);
+						})
+					},
+					init: function() {
+						let self = this;
+						let emailField = UI.textbox(self.input, {addLabel: self.input.getAttribute('data-label'), btnclear: true, addError: true})
+							.input(function(input) {
+								F.remClass(input, 'error');
+							})
+							.focus(function(input) {
+								F.remClass(input, 'error');
+							});
+
+						F.bind(self.btnwrong, 'click', function(e) {
+							e = e || event;
+							e.preventDefault();
+							self.switchLayout(false);
+							return false;
+						})
+
+						UI.button('notice_submit').click(function(btn) {
+							if (!self.input.value) {
+								emailField.error(self.input.getAttribute('data-error-empty'))
+								btn.error();
+								return;
+							}
+
+							Notice.subscribe(self.input.value)
+								.then(function() {
+									btn.success();
+								})
+								.catch(function(msg) {
+									btn.error();
+									if (msg.code == 602) {
+										emailField.error(self.input.getAttribute('data-error-invalid'))
+									}
+								})
+						});
+					},
+					popupEmail: async function() {
+						let promise = new Promise(function(resolve, reject) {
+							UI.popup({
+								bgclose: false,
+								html: F.id('popup_email_notification').innerHTML,
+								afterRender: function() {
+									let popup = this;
+									let form = F.id('popup_email_notification_form');
+									let emailField = UI.textbox(form.email, {addLabel: form.email.getAttribute('data-label'), btnclear: true, addError: true})
+										.input(function(input) {
+											F.remClass(input, 'error');
+										})
+										.focus(function(input) {
+											F.remClass(input, 'error');
+										});
+
+									let BtnSubmit = UI.button('popup_email_notification_submit', {});
+
+									BtnSubmit.click(function(btn) {
+										if (!form.email.value) {
+											emailField.error(form.email.getAttribute('data-error-empty'))
+											btn.error();
+											return;
+										}
+										Notice.subscribe(form.email.value)
+											.then(function() {
+												btn.success();
+												popup.close();
+												resolve();
+											})
+											.catch(function(msg) {
+												btn.error();
+												if (msg.code == 602) {
+													emailField.error(form.email.getAttribute('data-error-invalid'))
+												}
+											})
+									});
+
+									F.bind('popup_email_notification_close', 'click', function() {
+										if (form.nomore.checked) {
+											APP.setCookie('nomoreNoticeOrder', 1, {expires: 2592000});
+										}
+										popup.close();
+										resolve();
+									});
+								},
+							}).show();
+						});
+						return promise;
+					},
+					warningTag: async function() {
+						let promise = new Promise(function(resolve, reject) {
+							UI.popup({
+								bgclose: false,
+								html: F.id('popup_tag_alert').innerHTML,
+								afterRender: function() {
+									let popup = this;
+									let form  = F.id('popup_tag_alert_form');
+
+									let BtnSubmit = UI.button('popup_tag_alert_submit', {changeAtOnce: false});
+									let confirms  = form.tag_terms_confirm;
+									let nomore    = form.tag_terms_nomore;
+
+									F.bind(confirms, 'change', function() {
+										F.remClass(this.parentNode, 'error');
+									})
+									
+									BtnSubmit.click(function(btn) {
+										let error = false;
+										for (let i = 0; i < confirms.length; i++) {
+											if (!confirms[i].checked) {
+												F.addClass(confirms[i].parentNode, 'error');
+												error = true;
+											}
+										}
+										if (error) {
+											// btn.error();
+											return;
+										}
+										if (nomore.checked) {
+											let data = {
+												tz: Intl.DateTimeFormat().resolvedOptions().timeZone,
+												ts: ~~(Date.now() / 1000),
+												tt: Date()
+											}
+											APP.api('userAcceptTermsTag', data);
+										}
+										popup.close();
+										resolve();
+									});
+
+								},
+							}).show();
+						});
+						return promise;
+					},
+					showPopups: async function() {
+						if (!isWidget && !orderData.isAuth && !orderData.email && orderData.timeStart < 10 && !APP.getCookie('nomoreNoticeOrder')) {
+							await Notice.popupEmail();
+						}
+						if (F.id('popup_tag_alert') && orderData.timeStart < 10) {
+							await Notice.warningTag();
+						}
+					}
+				}
+
+
+				F.on(document, 'click', '.pseudo-hint-blue[data-copy]', function(e) {
+					e = e || event;
+					e.preventDefault();
+					let obj = this;
+					F.copy(obj.getAttribute('data-copy'));
+					F.addClass(obj, 'copied');
+					setTimeout(function() {
+						F.remClass(obj, 'copied');
+					}, 500);
+				})
+				F.on(document, 'click', '.copy[data-copy]', function(e) {
+					e = e || event;
+					e.preventDefault();
+					let obj = this;
+					F.copy(obj.getAttribute('data-copy'));
+					F.addClass(obj, 'copied');
+					setTimeout(function() {
+						F.remClass(obj, 'copied');
+					}, 500);
+				})
+
+				InitOrder(orderData);
+				Notice.init();
+				Notice.showPopups();
+				// if (!isWidget && !orderData.isAuth && !orderData.email && orderData.timeStart < 10 && !APP.getCookie('nomoreNoticeOrder')) {
+				// 	Notice.popupEmail();
+				// }
+			})
+		</script>			</div>
+		</section>
+	</main>
+    <template id="cookies_accept">
+        <div class="cookie-content">
+            <p>We use cookies to provide the best experience on our website. By using the FixedFloat service you agree to <a href="https://ff.io/privacy-policy">Privacy Policy</a> and <a href="https://ff.io/terms-of-service">Terms of Service</a>.</p>
+            <button class="btn submit close" type="button">Accept &amp; Close</button>
+        </div>
+    </template>
+    <footer>
+		<div class="wrapper">
+            <div class="foot-wrap">
+        		<div class="foot-outro">
+    				<a href="/" id="foot_logo" class="logo">
+    	                <span class="logo-text-fixed"></span><div class="ico"><span class="logo-arrow-from"></span><span class="logo-arrow-to hl"></span></div><span class="logo-text-float hl"></span>
+    	            </a>
+    	            <div class="foot-soc">
+                        <a rel="noopener noreferrer" target="_blank" class="ico s_tw hoverhl" title="Twitter" href="https://twitter.com/fixedfloat"></a>
+                        <a rel="noopener noreferrer" target="_blank" class="ico s_instagram hoverhl" title="instagram.com" href="https://www.instagram.com/fixedfloat/"></a>
+                        <a rel="noopener noreferrer" target="_blank" class="ico s_tg hoverhl" title="Telegram" href="https://t.me/FixedFloat"></a>
+                        <a rel="noopener noreferrer" target="_blank" class="ico s_reddit hoverhl" title="Reddit" href="https://www.reddit.com/user/FixedFloat/"></a>
+                        <a rel="noopener noreferrer" target="_blank" class="ico s_medium hoverhl" title="medium.com" href="https://medium.com/fixedfloat"></a>
+                        <a rel="noopener noreferrer" target="_blank" class="ico s_bestchange hoverhl" title="bestchange.com" href="https://www.bestchange.com/fixedfloat-exchanger.html"></a>
+                        <a rel="noopener noreferrer" target="_blank" class="ico s_trustpilot hoverhl" title="trustpilot.com" href="https://www.trustpilot.com/review/fixedfloat.com"></a>
+                            	            </div>
+                    <div class="copyright">©&nbsp;2018–2024&nbsp;<span>FixedFloat</span>.&nbsp;All rights reserved.</div>
+        		</div>
+                <div class="foot-menu linkhl">
+                    <div class="col">
+                        <h4>FixedFloat</h4>
+                        <ul>
+                            <li><a href="https://ff.io/about">About</a></li>
+                            <li><a href="https://ff.io/brand">Our brand</a></li>
+                            <li><a href="https://ff.io/affiliate">Affiliate program</a></li>
+                            <li><a href="https://ff.io/terms-of-service">Terms of Service</a></li>
+                            <li><a href="https://ff.io/privacy-policy">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Popular</h4>
+                        <ul>
+                            <li><a href="https://ff.io/blog">Blog</a></li>
+                            <li><a href="https://ff.io/exchange/xmr-to-{{firstCryptoShort}}">XMR to {{firstCryptoShort}}</a></li>
+                            <li><a href="https://ff.io/exchange/eth-to-{{firstCryptoShort}}">ETH to {{firstCryptoShort}}</a></li>
+                            <li><a href="https://ff.io/exchange/ltc-to-eth">LTC to ETH</a></li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="https://ff.io/faq">FAQ</a></li>
+                            <li><a href="https://ff.io/support">Support</a></li>
+                            <li><a href="https://ff.io/api">API</a></li>
+                        </ul>
+                    </div>
+        		</div>
+            </div>
+		</div>
+	</footer>
+    <link rel="stylesheet" type="text/css" href="/assets/css/svgimgs.min.css?211845">
+</body>
+</html>
